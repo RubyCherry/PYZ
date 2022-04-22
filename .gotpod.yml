@@ -1,0 +1,18 @@
+tasks:image: 
+  file:  .gitpod.Dockerfile
+
+  # - name: start
+- before: |
+    pyenv virtualenv venv
+    source activate venv
+    pip install --upgrade pip
+    pip install --upgrade setuptools
+    pip install --upgrade build
+    pip install --upgrade twine
+    pip install prettytable
+  init:  |
+    echo "проверка init"
+        
+  command: python start.py
+
+  
